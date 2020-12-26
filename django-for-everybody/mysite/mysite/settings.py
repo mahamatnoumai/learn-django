@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+APP_NAME = "ChucksList"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -31,15 +31,31 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    ## these are the apps 
+
     'polls.apps.PollsConfig',
     'autos.apps.AutosConfig',
-    'hello.apps.HelloConfig',
+    'cats.apps.CatsConfig',
+    'ads.apps.AdsConfig', 
+
+
+    # django adde3d
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
+
+    # add extensions installed
+    'django_extensions',
+    'crispy_forms',
+    'rest_framework', 
+    'social_django', 
+    'hello.apps.HelloConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -65,6 +81,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                ## apps tags added 
+                # 'hello.context_processors.settings',      # Add
+                # 'social_django.context_processors.backends',  # Add
+                # 'social_django.context_processors.login_redirect', # Add
             ],
         },
     },
